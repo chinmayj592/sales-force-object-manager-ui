@@ -34,7 +34,7 @@ export default function DashboardPage() {
   }, [addRecord]);
 
   const handleEdit = useCallback(async (data) => {
-    await editRecord(editingRecord.id, data);
+    await editRecord(editingRecord.Id, data);
   }, [editRecord, editingRecord]);
 
   const handleDeleteConfirm = useCallback(async () => {
@@ -42,7 +42,7 @@ export default function DashboardPage() {
     setIsDeleting(true);
     setDeleteError(null);
     try {
-      await removeRecord(deleteTarget.id);
+      await removeRecord(deleteTarget.Id);
       setDeleteTarget(null);
     } catch (err) {
       setDeleteError(err.message || 'Failed to delete record.');

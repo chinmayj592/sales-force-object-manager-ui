@@ -16,6 +16,7 @@ export function useRecords(objectType) {
     setIsLoading(true);
     setError(null);
     pageRef.current = 1;
+
     try {
       const result = await fetchRecords(objectType, 1, PAGE_SIZE);
       setRecords(result.records);
@@ -31,9 +32,16 @@ export function useRecords(objectType) {
 
   const loadMore = useCallback(async () => {
     if (isLoadingMore || !hasMore) return;
+
     setIsLoadingMore(true);
+
     try {
-      const result = await fetchRecords(objectType, pageRef.current, PAGE_SIZE);
+      const result = await fetchRecords(
+          objectType,
+          pageRef.current,
+          PAGE_SIZE
+      );
+
       setRecords((prev) => [...prev, ...result.records]);
       setHasMore(result.hasMore);
       setTotal(result.total);
@@ -49,26 +57,43 @@ export function useRecords(objectType) {
     setRecords([]);
     setHasMore(true);
     loadInitial();
-  }, [objectType]);
+  }, [objectType, loadInitial]);
 
-  const addRecord = useCallback(async (data) => {
-    const newRecord = await createRecord(objectType, data);
-    setRecords((prev) => [newRecord, ...prev]);
-    setTotal((t) => t + 1);
-    return newRecord;
-  }, [objectType]);
+  const addRecord = useCallback(
+      async (data) => {
+        const newRecord = await createRecord(objectType, data);
+        setRecords((prev) => [newRecord, ...prev]);
+        setTotal((t) => t + 1);
+        return newRecord;
+      },
+      [objectType]
+  );
 
-  const editRecord = useCallback(async (id, data) => {
-    const updated = await updateRecord(objectType, id, data);
-    setRecords((prev) => prev.map((r) => (r.id === id ? updated : r)));
-    return updated;
-  }, [objectType]);
+  const editRecord = useCallback(
+      async (id, data) => {
+        const updated = await updateRecord(objectType, id, data);
 
-  const removeRecord = useCallback(async (id) => {
-    await deleteRecord(objectType, id);
-    setRecords((prev) => prev.filter((r) => r.id !== id));
-    setTotal((t) => t - 1);
-  }, [objectType]);
+        setRecords((prev) =>
+            prev.map((r) => (r.Id === id ? updated : r))
+        );
+
+        return updated;
+      },
+      [objectType]
+  );
+
+  const removeRecord = useCallback(
+      async (id) => {
+        await deleteRecord(objectType, id);
+
+        setRecords((prev) =>
+            prev.filter((r) => r.Id !== id)
+        );
+
+        setTotal((t) => t - 1);
+      },
+      [objectType]
+  );
 
   return {
     records,
