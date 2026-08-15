@@ -79,7 +79,7 @@ export default function RecordTable({
           <tbody>
             {records.map((record) => (
               <RecordRow
-                key={record.id}
+                key={record.Id}
                 record={record}
                 columnFields={columnFields}
                 onView={onView}

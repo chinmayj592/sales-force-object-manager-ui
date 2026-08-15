@@ -35,7 +35,17 @@ export default function RecordForm({ isOpen, onClose, onSubmit, fields, initialD
     }
     setIsSubmitting(true);
     try {
-      await onSubmit(formData);
+      // Only send the editable field keys defined in the fields config.
+      // This strips Salesforce system fields (Id, CreatedDate, etc.) from
+      // the PATCH body — Salesforce rejects read-only fields in updates.
+      const allowedKeys = fields.map((f) => f.key);
+      const payload = allowedKeys.reduce((acc, key) => {
+        if (formData[key] !== undefined && formData[key] !== '') {
+          acc[key] = formData[key];
+        }
+        return acc;
+      }, {});
+      await onSubmit(payload);
       onClose();
     } catch (err) {
       setErrors({ _form: err.message || 'Something went wrong. Please try again.' });

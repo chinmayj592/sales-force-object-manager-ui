@@ -18,7 +18,7 @@ export function getRecordDisplayName(record, objectType) {
     return [record.FirstName, record.LastName].filter(Boolean).join(' ');
   }
   if (record.Subject) return record.Subject;
-  return record.id || 'Record';
+  return record.Id || 'Record';
 }
 
 export function buildEmptyRecord(fields) {
