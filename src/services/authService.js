@@ -2,10 +2,11 @@ const SF_AUTH_ENDPOINT = import.meta.env.VITE_SF_AUTH_ENDPOINT || 'http://localh
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
 
 // Redirects the browser to the backend-initiated Salesforce OAuth flow.
-// The backend handles PKCE, consumer key/secret, and redirects back to
-// the frontend with ?session_token=<token> after successful login.
-export function initiateOAuthLogin() {
-  window.location.href = SF_AUTH_ENDPOINT;
+// loginUrl: optional override (e.g. https://test.salesforce.com for sandbox)
+export function initiateOAuthLogin(loginUrl) {
+  const url = new URL(SF_AUTH_ENDPOINT);
+  if (loginUrl) url.searchParams.set('login_url', loginUrl);
+  window.location.href = url.toString();
 }
 
 // Validates the stored session token by fetching the current user profile.

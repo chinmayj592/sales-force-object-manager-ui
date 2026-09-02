@@ -34,9 +34,9 @@ export function AuthProvider({ children }) {
       .finally(() => setIsLoading(false));
   }, []);
 
-  const login = useCallback(() => {
+  const login = useCallback((loginUrl) => {
     setError(null);
-    initiateOAuthLogin();
+    initiateOAuthLogin(loginUrl);
   }, []);
 
   const logout = useCallback(() => {
