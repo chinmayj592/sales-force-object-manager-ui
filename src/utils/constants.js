@@ -25,7 +25,6 @@ export const OBJECT_FIELDS = {
     { key: 'Amount', label: 'Amount ($)', type: 'number' },
     { key: 'StageName', label: 'Stage', type: 'select', options: ['Prospecting', 'Qualification', 'Needs Analysis', 'Value Proposition', 'Proposal/Price Quote', 'Negotiation/Review', 'Closed Won', 'Closed Lost'] },
     { key: 'CloseDate', label: 'Close Date', type: 'date', required: true },
-    { key: 'AccountName', label: 'Account', type: 'text' },
     { key: 'Probability', label: 'Probability (%)', type: 'number' },
     { key: 'Type', label: 'Type', type: 'select', options: ['New Business', 'Existing Business', 'Renewal'] },
   ],
@@ -43,7 +42,6 @@ export const OBJECT_FIELDS = {
     { key: 'LastName', label: 'Last Name', type: 'text', required: true },
     { key: 'Email', label: 'Email', type: 'email' },
     { key: 'Phone', label: 'Phone', type: 'phone' },
-    { key: 'AccountName', label: 'Account', type: 'text' },
     { key: 'Title', label: 'Title', type: 'text' },
     { key: 'Department', label: 'Department', type: 'text' },
   ],
@@ -52,7 +50,7 @@ export const OBJECT_FIELDS = {
     { key: 'Subject', label: 'Subject', type: 'text', required: true },
     { key: 'Status', label: 'Status', type: 'select', options: ['New', 'Working', 'Escalated', 'Closed'] },
     { key: 'Priority', label: 'Priority', type: 'select', options: ['Low', 'Medium', 'High'] },
-    { key: 'ContactName', label: 'Contact', type: 'text' },
+
     { key: 'Origin', label: 'Origin', type: 'select', options: ['Phone', 'Email', 'Web'] },
     { key: 'Description', label: 'Description', type: 'text' },
   ],
@@ -61,8 +59,8 @@ export const OBJECT_FIELDS = {
 // Which fields to show as table columns (subset of OBJECT_FIELDS)
 export const TABLE_COLUMNS = {
   Account: ['Name', 'Industry', 'Phone', 'Website', 'Type'],
-  Opportunity: ['Name', 'Amount', 'StageName', 'CloseDate', 'AccountName'],
+  Opportunity: ['Name', 'Amount', 'StageName', 'CloseDate', 'Type'],
   Lead: ['FirstName', 'LastName', 'Company', 'Email', 'Status'],
-  Contact: ['FirstName', 'LastName', 'Email', 'Phone', 'AccountName'],
-  Case: ['CaseNumber', 'Subject', 'Status', 'Priority', 'ContactName'],
+  Contact: ['FirstName', 'LastName', 'Email', 'Phone', 'Title'],
+  Case: ['CaseNumber', 'Subject', 'Status', 'Priority', 'Origin'],
 };
