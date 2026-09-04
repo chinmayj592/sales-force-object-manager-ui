@@ -9,11 +9,10 @@ import './App.css';
 
 function AppShell() {
   const { isAuthenticated, isLoading } = useAuth();
-  const location = useLocation();
-  const isLoginPage = location.pathname === '/login' || location.pathname === '/'  && !isAuthenticated;
-  const showShell = isAuthenticated && !isLoading;
 
-  if (!showShell) {
+  if (isLoading) return null;
+
+  if (!isAuthenticated) {
     return <AppRoutes />;
   }
 
