@@ -1,5 +1,4 @@
-import { BrowserRouter } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { BrowserRouter, useLocation } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { ObjectProvider } from './context/ObjectContext';
 import { useAuth } from './hooks/useAuth';
@@ -7,9 +6,6 @@ import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import AppRoutes from './routes';
 import './App.css';
-
-import { useAuth } from './hooks/useAuth';
-import { useLocation } from 'react-router-dom';
 
 function AppShell() {
   const { isAuthenticated, isLoading } = useAuth();
