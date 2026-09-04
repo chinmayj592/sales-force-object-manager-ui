@@ -676,3 +676,393 @@
   .header__user-org { display: none; }
   .login-card { padding: 32px 24px; }
 }
+
+/* ============================================================
+   Landing / Login Page — Professional Salesforce Style
+   ============================================================ */
+
+.lp {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f8fafc;
+}
+
+/* ---- Hero ---- */
+.lp__hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #032d60 0%, #0176d3 55%, #00a1e0 100%);
+  padding: 72px 24px 80px;
+}
+
+.lp__hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.lp__hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.12;
+  filter: blur(60px);
+}
+
+.lp__hero-blob--1 {
+  width: 500px;
+  height: 500px;
+  background: #00a1e0;
+  top: -120px;
+  right: -100px;
+}
+
+.lp__hero-blob--2 {
+  width: 350px;
+  height: 350px;
+  background: #ffffff;
+  bottom: -80px;
+  left: 5%;
+}
+
+.lp__hero-inner {
+  position: relative;
+  max-width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  flex-wrap: wrap;
+}
+
+.lp__hero-left {
+  flex: 1;
+  min-width: 300px;
+  color: #fff;
+}
+
+.lp__badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.lp__hero-title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 18px;
+}
+
+.lp__hero-title--accent {
+  color: #7ec8e3;
+}
+
+.lp__hero-sub {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+
+.lp__author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.lp__author-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00a1e0, #7ec8e3);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 2px solid rgba(255,255,255,0.4);
+}
+
+.lp__author-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.lp__author-role {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.7);
+  margin-top: 2px;
+}
+
+/* ---- Login Card ---- */
+.lp__card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  padding: 36px 32px;
+  width: 100%;
+  max-width: 400px;
+  flex-shrink: 0;
+}
+
+.lp__card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.lp__card-icon {
+  color: var(--color-salesforce);
+  flex-shrink: 0;
+}
+
+.lp__card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.lp__card-subtitle {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.lp__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.lp__label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.lp__select,
+.lp__input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  color: var(--color-text);
+  background: var(--color-surface);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.lp__select:focus,
+.lp__input:focus {
+  outline: none;
+  border-color: var(--color-salesforce);
+  box-shadow: 0 0 0 3px rgba(0,161,224,0.15);
+}
+
+.lp__login-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 20px;
+  background: linear-gradient(135deg, #0176d3, #00a1e0);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  margin-top: 8px;
+  transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 14px rgba(1,118,211,0.35);
+}
+
+.lp__login-btn:hover:not(:disabled) {
+  opacity: 0.92;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(1,118,211,0.45);
+}
+
+.lp__login-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.lp__card-note {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin-top: 14px;
+}
+
+/* ---- Features Section ---- */
+.lp__features {
+  padding: 72px 24px;
+  background: #fff;
+}
+
+.lp__features-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.lp__section-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-salesforce);
+  margin-bottom: 12px;
+}
+
+.lp__section-title {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.lp__section-sub {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  max-width: 520px;
+  margin: 0 auto 48px;
+  line-height: 1.7;
+}
+
+.lp__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  text-align: left;
+}
+
+.lp__feature-card {
+  background: #f8fafc;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 28px 24px;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.lp__feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-salesforce);
+}
+
+.lp__feature-icon {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #e8f4fd, #d0eaf8);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+
+.lp__feature-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.lp__feature-desc {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+/* ---- Tech Stack ---- */
+.lp__stack {
+  background: linear-gradient(135deg, #032d60, #0176d3);
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.lp__stack-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.lp__stack .lp__section-label {
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 20px;
+}
+
+.lp__stack-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.lp__pill {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 24px;
+  letter-spacing: 0.02em;
+  transition: background 0.2s;
+}
+
+.lp__pill:hover {
+  background: rgba(255,255,255,0.22);
+}
+
+/* ---- Footer ---- */
+.lp__footer {
+  background: #032d60;
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  padding: 20px 24px;
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.lp__footer strong {
+  color: #fff;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .lp__hero-inner {
+    flex-direction: column;
+    gap: 36px;
+  }
+  .lp__card {
+    max-width: 100%;
+  }
+  .lp__hero {
+    padding: 48px 20px 56px;
+  }
+}
