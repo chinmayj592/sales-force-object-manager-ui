@@ -82,12 +82,9 @@ export default function LoginPage() {
     <div className="lp">
       {/* ── Created By Banner ── */}
       <div className="lp__created-by">
-        <span className="lp__created-by-label">Created by</span>
         <span className="lp__created-by-name">Chinmay Jaiswal</span>
         <span className="lp__created-by-sep">·</span>
-        <span className="lp__created-by-role">Associate Software Engineer Candidate</span>
-        <span className="lp__created-by-sep">·</span>
-        <span className="lp__created-by-company">CloudVandana Assignment #1</span>
+        <span className="lp__created-by-role">Full Stack Developer · Associate Software Engineer Candidate</span>
       </div>
 
       {/* ── Hero ── */}
