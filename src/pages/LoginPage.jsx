@@ -216,7 +216,7 @@ export default function LoginPage() {
 
       {/* ── Footer ── */}
       <footer className="lp__footer">
-        <span>Built by <strong>Chinmay Jaiswal</strong> · Assignment #1 — CloudVandana</span>
+        <span>Built by <strong>Chinmay Jaiswal</strong></span>
       </footer>
     </div>
   );
