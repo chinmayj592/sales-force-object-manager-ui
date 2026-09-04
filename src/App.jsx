@@ -1,4 +1,4 @@
-import { BrowserRouter, useLocation } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { ObjectProvider } from './context/ObjectContext';
 import { useAuth } from './hooks/useAuth';
@@ -10,7 +10,13 @@ import './App.css';
 function AppShell() {
   const { isAuthenticated, isLoading } = useAuth();
 
-  if (isLoading) return null;
+  if (isLoading) {
+    return (
+      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#032d60' }}>
+        <div style={{ width: 40, height: 40, borderRadius: '50%', border: '3px solid rgba(255,255,255,0.2)', borderTopColor: '#00a1e0', animation: 'spin 0.7s linear infinite' }} />
+      </div>
+    );
+  }
 
   if (!isAuthenticated) {
     return <AppRoutes />;
