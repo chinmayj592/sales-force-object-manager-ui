@@ -686,6 +686,46 @@
   display: flex;
   flex-direction: column;
   background: #f8fafc;
+  width: 100%;
+}
+
+/* ---- Created By Banner ---- */
+.lp__created-by {
+  background: #032d60;
+  color: rgba(255,255,255,0.9);
+  text-align: center;
+  padding: 10px 24px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.lp__created-by-label {
+  color: rgba(255,255,255,0.6);
+  font-weight: 400;
+}
+
+.lp__created-by-name {
+  color: #7ec8e3;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.lp__created-by-sep {
+  color: rgba(255,255,255,0.3);
+}
+
+.lp__created-by-role {
+  color: rgba(255,255,255,0.75);
+  font-weight: 500;
+}
+
+.lp__created-by-company {
+  color: rgba(255,255,255,0.6);
 }
 
 /* ---- Hero ---- */
@@ -693,7 +733,10 @@
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, #032d60 0%, #0176d3 55%, #00a1e0 100%);
-  padding: 72px 24px 80px;
+  padding: 0 24px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .lp__hero-bg {
@@ -1063,6 +1106,7 @@
     max-width: 100%;
   }
   .lp__hero {
-    padding: 48px 20px 56px;
+    padding: 0 20px;
+    min-height: 100vh;
   }
 }

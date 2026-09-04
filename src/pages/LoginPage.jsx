@@ -80,6 +80,16 @@ export default function LoginPage() {
 
   return (
     <div className="lp">
+      {/* ── Created By Banner ── */}
+      <div className="lp__created-by">
+        <span className="lp__created-by-label">Created by</span>
+        <span className="lp__created-by-name">Chinmay Jaiswal</span>
+        <span className="lp__created-by-sep">·</span>
+        <span className="lp__created-by-role">Associate Software Engineer Candidate</span>
+        <span className="lp__created-by-sep">·</span>
+        <span className="lp__created-by-company">CloudVandana Assignment #1</span>
+      </div>
+
       {/* ── Hero ── */}
       <section className="lp__hero">
         <div className="lp__hero-bg" aria-hidden="true">
