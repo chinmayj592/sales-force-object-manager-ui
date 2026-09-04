@@ -95,7 +95,6 @@ export default function LoginPage() {
         </div>
         <div className="lp__hero-inner">
           <div className="lp__hero-left">
-            <div className="lp__badge">Assignment #1 — Associate Software Engineer</div>
             <h1 className="lp__hero-title">
               Salesforce
               <span className="lp__hero-title--accent"> Object Manager</span>
